@@ -30,6 +30,8 @@
 #ifndef MI_PROGRAMOPTIONS_H
 #define MI_PROGRAMOPTIONS_H
 
+//#define USE_REGEX_FOR_PARSE_COMMAND_LINE
+
 #include <iosfwd>
 #include <map>
 #include <regex>
@@ -162,7 +164,7 @@ private:
   string_v::const_iterator pbegin_;
 };
 
-value_set parse_config_file(const std::string& filename, option_set& options);
+value_set parse_config_file(const std::string& filename, option_set& options) ;
 value_set parse_config_file(std::istream& infile, option_set& options);
 
 value_set parse_command_line(const std::vector<std::string>& argv, option_set& options, std::vector<std::string>& positional);
